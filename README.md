@@ -10,5 +10,5 @@ but after exp-4,i changed my work environment on lunx ubuntu, and use gcc to com
 
 联系邮箱：lizehua21@lzu.edu.cn OR zehuali0417@gmail.com
 
-如果您觉得这个仓库对您有帮助，能不能帮我点个免费的小星星呢(doge）
+如果您觉得这个仓库对您有帮助，能不能帮我点个免费的小星星呢(doge）!
 
