@@ -4,7 +4,7 @@
 欢迎各位批评指正，如有问题可通过issue或邮箱联系我。
 
 exp1-exp3建议clone到vsstudio2022的工作环境下，因为这是我的工作环境。
-but after exp-4,i changed my work environment on lunx ubuntu, and use gcc to compile, trust me it's much better tan vs 2022
+but after exp-4,i changed my work environment on lunx ubuntu, and use gcc to compile, trust me it's much better than vs 2022
 
 特别说明vs无法识别scanf，只有scanf_s，使用其他代码编辑器请自行改正。
 
