@@ -18,15 +18,12 @@ int main (void)
 	while(dec<10000)
 	{
 		int flag=0;
-		for(int cols=0;cols<10;cols++)
+		if((flag=find(dec,12,4,duo))==1&&(flag=find(dec,16,4,hex))==1) 
 		{
-			if((flag=find(dec,12,4,duo))==1&&(flag=find(dec,16,4,hex))==1) 
-			{
-				printf("%d\t",dec);
-				cnt++;
-			}
-			dec++;
+			printf("%d\t",dec);
+			cnt++;
 		}
+		dec++;
 	}
 	printf("tatal:%d\n",cnt);
 
