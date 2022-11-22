@@ -3,6 +3,7 @@
  * author: lihuax
  * version: 1.0
  * discription: to calculate the methods of frog jumping problem
+ * 失败，我也不知道bug在哪，还请大佬指点。
  */
 
 #include<stdio.h>
