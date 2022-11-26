@@ -5,9 +5,10 @@
  */
 
 void data_sort(char data[],int n,
-		void(*p)(char data[],int n),
-		void(*out)(char data[],int n))
+		void(*p)(char data[],int n,int * cntgro),
+		void(*out)(char data[],int n),
+		int* cntgro)
 {
-	p(data,n);
+	p(data,n,cntgro);
 	out(data,n);
 }
