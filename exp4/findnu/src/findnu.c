@@ -24,7 +24,6 @@ int main(void)
 int findnu(int a[], int length, int nu)
 {
 	int n, m, t;
-	if (length % 2 == 0);
 
 	n = (length + 1) * 0.5;
 	m = n;
