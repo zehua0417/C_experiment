@@ -1,0 +1,8 @@
+﻿  easyx_heart_demo1.cpp
+D:\Project\C++ Project\easyx Study\easyx_heart_demo1\easyx_heart_demo1.cpp(86,17): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+D:\Project\C++ Project\easyx Study\easyx_heart_demo1\easyx_heart_demo1.cpp(86,14): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+D:\Project\C++ Project\easyx Study\easyx_heart_demo1\easyx_heart_demo1.cpp(110,18): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+D:\Project\C++ Project\easyx Study\easyx_heart_demo1\easyx_heart_demo1.cpp(110,15): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+D:\Project\C++ Project\easyx Study\easyx_heart_demo1\easyx_heart_demo1.cpp(136,18): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+D:\Project\C++ Project\easyx Study\easyx_heart_demo1\easyx_heart_demo1.cpp(136,15): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+  easyx_heart_demo1.vcxproj -> D:\Project\C++ Project\easyx Study\easyx_heart_demo1\x64\Debug\easyx_heart_demo1.exe
