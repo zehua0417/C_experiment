@@ -1,8 +1,9 @@
 /*
  * file name: easyx_heart_demo1.cpp
  * author: lihuax
- * version: 1.0
+ * version: 1.1
  * discriptiion: use easyx drawing a heart! 
+ * 使用BeginBatchDraw(),FlushBatchDraw函数解决了闪屏问题
  */
 
 #define _CRT_SECURE_NO_WARNINGS
@@ -26,6 +27,7 @@ int main(void)
 	initgraph(WIDTH, HEIGHT);
 	setbkcolor(WHITE);
 	cleardevice();
+	BeginBatchDraw();
 
 	//画图
 	double mul = 20;
@@ -45,6 +47,7 @@ int main(void)
 			diffusion(mul,234,54,128);
 			diffusion(mul,234,63,247);
 			outer_diffusion(mul,234,63,247);
+			FlushBatchDraw();
 			Sleep(150);
 		}
 	
@@ -56,6 +59,7 @@ int main(void)
 			diffusion(mul, 234, 54, 128);
 			diffusion(mul, 234, 63, 247);
 			outer_diffusion(mul, 234, 63, 247);
+			FlushBatchDraw();
 			Sleep(150);
 		}
 	}
