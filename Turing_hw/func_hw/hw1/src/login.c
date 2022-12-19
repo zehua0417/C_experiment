@@ -6,6 +6,7 @@
  */
 #include<stdio.h>
 #include<string.h>
+#include<conio.h>
 
 int id[5] ={10001,10002,10003,10004};
 char name[5][10]={"张三","李四","王五","赵六"};
@@ -75,7 +76,7 @@ void login(int * p)
 	int cnt=0;
 	printf("Please input your password\nPassword:");
 	getchar();
-	while((ch=getchar())!='\n')
+	while((ch=_getch())!='\n')
 	{
 		password_input[cnt]=ch;
 		cnt++;
