@@ -44,7 +44,7 @@ struct LinkNode *InitLinkList()
 {
 	char ch;
 	//头节点
-	struct LinkNode *header = malloc(sizeof(struct LinkNode));
+	struct LinkNode *header = (struct LinkNode*) malloc(sizeof(struct LinkNode));
 	header->data = 0;
 	header->next = NULL;
 	//
@@ -57,7 +57,7 @@ struct LinkNode *InitLinkList()
 		if(isspace(ch))
 			continue;
 		//先创建新节点
-		struct LinkNode *newnode = malloc(sizeof(struct LinkNode));
+		struct LinkNode *newnode = (struct LinkNode*)malloc(sizeof(struct LinkNode));
 		newnode ->data = ch;
 		newnode ->next = NULL;
 

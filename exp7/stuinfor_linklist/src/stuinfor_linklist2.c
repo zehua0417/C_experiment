@@ -1,22 +1,81 @@
 /****************************************************************
  * file name: stuinfor_linklist.c
  * author: lihuax
- * version: 1.0
- * description: 创建一个 单向链表 来记录学生信息，人数3--5人；链表结点为结构变量，结构的要求如下：
+ * version: 2.0
+ * description: 创建一个 单向链表 来记录学生信息，人数3--5人；链表结点为结构变量，结构的要求如下：
  *****************************************************************
  *struct stu_info
  *{
- *         char stu_num[10];  //学号
- *         char stu_name[8];  //姓名
- *         char stu_sex[2];    //性别
- *         int stu_score;    //成绩
+ *         char stu_num[10];  //学号
+ *         char stu_name[8];  //姓名
+ *         char stu_sex[2];    //性别
+ *         int stu_score;    //成绩
  *         struct stu_info *next;
  * };
  *****************************************************************
- * *************************程序设计要求**************************
- *（1）插入新的学生信息(插入节点的位置可任意指定）
- *（2）删除指定的学生信息
- *（3）根据学号查询并显示查询到的学生信息
- *（4）以上三项任务分别自定义函数实现，执行后显示执行结果
- *（5）程序运行后要求可以循环执行前三项操作，直到选择退出时结束程序
+ * *************************程序设计要求**************************
+ *（1）插入新的学生信息(插入节点的位置可任意指定）
+ *（2）删除指定的学生信息
+ *（3）根据学号查询并显示查询到的学生信息
+ *（4）以上三项任务分别自定义函数实现，执行后显示执行结果
+ *（5）程序运行后要求可以循环执行前三项操作，直到选择退出时结束程序
  ******************************************************************/
+
+#include<stdio.h>
+#include<ctype.h>
+#include<stdlib.h>
+#define NUM_SIZE 10
+#define NAME_SIZE 8
+#define GENDER_SIZE 2;
+
+struct stu_infor
+{
+    char stu_num[NUM_SIZE];       //
+    char stu_name[NAME_SIZE];     //
+    char stu_gender[GENDER_SIZE]; //
+    struct stu_infor *next;
+};
+
+int main (void)
+{
+    test();
+    return 0;
+}
+
+void test();
+char *s_gets();
+//
+struct stu_infor *InitStuinfor();
+
+void test()
+{
+    struct stuinfor *header = InitStuinfor();
+}
+
+char *s_gets(char *st,int n){
+	char *ret_val;
+	int i = 0;
+	
+	ret_val = fgets(st,n,stdin);
+	if(ret_val){//与*ret_val!='\0'相同，当ret_val指向空字符时，ret_val的值是0，即测试条件为假，while循环结束
+            while(st[i] != '\n' && st[i] != '\0')
+                i++;
+            if(st[i] == '\n')
+                st[i] = '\0';
+            else  //如果检测到结束标志'\0'，则读取但不储存输入，包括\n。  
+              //丢弃的目的，不让多出来的留在缓冲区，保证了读取语句与键盘输入同步   
+                while(getchar() != '\n')
+            continue;
+        }
+	return ret_val;
+}
+
+struct stu_infor *InitStuinfor()
+{
+    struct stu_infor *header = NULL;
+    struct stu_header *pRear = header;
+    char ch = 0;
+
+    printf("please input ID\n");
+    while()
+}
