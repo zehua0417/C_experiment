@@ -8,8 +8,8 @@
  *{
  *         char stu_num[10];  //学号
  *         char stu_name[8];  //姓名
- *         char stu_sex[2];    //性别
- *         int stu_score;    //成绩
+ *         char stu_sex[2];   //性别
+ *         int stu_score;     //成绩
  *         struct stu_info *next;
  * };
  *****************************************************************
@@ -24,17 +24,36 @@
 #include<stdio.h>
 #include<ctype.h>
 #include<stdlib.h>
+#include<string.h>
 #define NUM_SIZE 10
 #define NAME_SIZE 8
-#define GENDER_SIZE 2;
+#define GENDER_SIZE 7
 
 struct stu_infor
 {
-    char stu_num[NUM_SIZE];       //
-    char stu_name[NAME_SIZE];     //
-    char stu_gender[GENDER_SIZE]; //
+    char stu_num[NUM_SIZE];       //学号
+    char stu_name[NAME_SIZE];     //姓名
+    char stu_gender[GENDER_SIZE]; //性别
+    int stu_score;                //成绩
     struct stu_infor *next;
 };
+
+void test();
+char *s_gets(char *st,int n);
+//输入数据并初始化链表
+struct stu_infor *InitStuinfor_linklist();
+//遍历链表
+void Foreach_linklist(struct stu_infor *header);
+//根据stu_num删除学生信息
+void DelByNum_stuinfor_linklist(struct stu_infor *header, char *dev_num);
+/**
+ * @brief    根据学号查询学生信息
+ * @param header    链表表头
+ * @param search_num    查询的学号
+ * 
+ * @return   返回所查询学号信息的前一个节点的地址
+ */
+struct stu_infor *SearchById_linklist(struct stu_infor *header, char *search_num);
 
 int main (void)
 {
@@ -42,17 +61,25 @@ int main (void)
     return 0;
 }
 
-void test();
-char *s_gets();
-//
-struct stu_infor *InitStuinfor();
-
 void test()
 {
-    struct stuinfor *header = InitStuinfor();
+    struct stu_infor *header = InitStuinfor_linklist();
+    Foreach_linklist(header);
+    char del_num[NUM_SIZE] ={0};
+    printf("which student do you want to del?\nID:");
+    s_gets(del_num,NUM_SIZE);
+    DelByNum_stuinfor_linklist(header, del_num);
+    printf("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-\n");
+    Foreach_linklist(header);
+    printf("====================================\n");
+    printf("input id to search student\nID:");
+    char search_num[NUM_SIZE]={0};
+    s_gets(search_num,NUM_SIZE);
+    Foreach_linklist(SearchById_linklist(header, search_num)->next);
 }
 
-char *s_gets(char *st,int n){
+char *s_gets(char *st,int n)
+{
 	char *ret_val;
 	int i = 0;
 	
@@ -70,12 +97,86 @@ char *s_gets(char *st,int n){
 	return ret_val;
 }
 
-struct stu_infor *InitStuinfor()
+struct stu_infor *InitStuinfor_linklist()
 {
-    struct stu_infor *header = NULL;
-    struct stu_header *pRear = header;
-    char ch = 0;
-
+    struct stu_infor *header = (struct stu_infor*) malloc(sizeof(struct stu_infor));
+    header -> next = NULL;
+    struct stu_infor *pRear = header;
+    char input_id[NUM_SIZE] = {0};
+        
     printf("please input ID\n");
-    while()
+    while(s_gets(input_id,NUM_SIZE) != NULL &&input_id[0] != '\0')
+    {
+        struct stu_infor *newinfor = (struct stu_infor *) malloc(sizeof(struct stu_infor));
+        if(header -> next == NULL)
+            header -> next = newinfor;
+        else
+            pRear -> next = newinfor;
+        newinfor -> next = NULL;
+        strcpy(newinfor -> stu_num, input_id);
+        printf("please input name\n");
+        scanf("%s",&newinfor -> stu_name);
+        printf("please input gender\n");
+        scanf("%s",&newinfor -> stu_gender);
+        printf("please inout score\n");
+        scanf("%d",&newinfor -> stu_score);
+        while(getchar()!='\n')
+            continue;
+        printf("please input next ID\n");
+        pRear = newinfor;
+    }
+    return header;
+}
+
+void Foreach_linklist(struct stu_infor *header)
+{
+    if(header == NULL)
+	{
+		return;
+	}
+	struct stu_infor *pCurrent = (header -> next);
+	while(pCurrent!=NULL)
+	{
+		printf("ID:%s\n",pCurrent->stu_num);
+		printf("name:%s\n",pCurrent->stu_name);
+		printf("gender:%s\n",pCurrent->stu_gender);
+		printf("score:%d\n************************\n",pCurrent->stu_score);
+		pCurrent = pCurrent->next;
+	}
+}
+
+void DelByNum_stuinfor_linklist(struct stu_infor *header, char *del_num)
+{
+    struct stu_infor *pPrev = SearchById_linklist(header, del_num);
+    struct stu_infor *pCurrent = (struct stu_infor*)pPrev->next;
+    if(pCurrent == NULL)
+    {
+        return;
+    }
+    //删除操作:重组,释放
+    pPrev -> next = pCurrent -> next;
+    free (pCurrent);
+    pCurrent = NULL;
+}
+
+struct stu_infor *SearchById_linklist(struct stu_infor *header, char *search_num)
+{
+    if (header == NULL)
+        return NULL;
+    //两个辅助指针
+    struct stu_infor *pPrev = header;
+    struct stu_infor *pCurrent = header-> next;
+
+    while (pCurrent != NULL)
+    {
+        //判断
+        if(pCurrent -> stu_num == search_num)
+        {
+            return pPrev;
+        }
+        //移动两个辅助指针的值
+        pPrev = pCurrent;
+        pCurrent = pCurrent -> next;
+    }
+    return NULL;
 }
