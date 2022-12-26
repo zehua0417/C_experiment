@@ -17,12 +17,12 @@ void out_data(int data[], int n);   //输出
 
 int main(void)
 {
-	int data1[] = { 4,3,5,6,1 };
-	int n = sizeof(data1) / 4;
-	data_sort(data1, n, bubble_sort, out_data);
+	//int data1[] = { 4,3,5,6,1 };
+	//int n = sizeof(data1) / 4;
+	//data_sort(data1, n, bubble_sort, out_data);
 
-	int data2[] = { 6,3,8,99,2,1 };
-	n = sizeof(data2) / 4;
+	int data2[] = { 6,3,8,99,2,1,80,21,55,401 };
+	int n = sizeof(data2) / 4;
 	data_sort(data2, n, selection_sort, out_data);
 
 	return 0;

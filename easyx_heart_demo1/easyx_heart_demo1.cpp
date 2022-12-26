@@ -9,7 +9,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 #include<stdlib.h>
-#include<graphics.h>
+#include<easyx.h>
 #include<math.h>
 #include<windows.h>
 #define PIE 3.1415926
