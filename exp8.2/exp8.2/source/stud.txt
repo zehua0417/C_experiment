@@ -1,0 +1,4 @@
+ID 	 name 		 chinese 	 math 		 english 	 average
+1 	 lihua 		 100.0 		 100.0 		 100.0 		 100.0
+2 	 tom 		 66.0 		 77.0 		 99.0 		 80.7
+3 	 sam 		 48.0 		 55.0 		 39.0 		 47.3

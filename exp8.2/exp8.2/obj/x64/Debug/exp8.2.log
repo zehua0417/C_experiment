@@ -1,0 +1,3 @@
+﻿  main.c
+D:\vscode\Project\C project\homework\exp8.2\exp8.2\src\main.c(78,52): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+  exp8.2.vcxproj -> D:\vscode\Project\C project\homework\exp8.2\exp8.2\bin\x64\Debug\exp8.2.exe
